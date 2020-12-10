@@ -1,0 +1,65 @@
+%%%%%%%%%%%%%%%%%%%%%%%%% Notes %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Author: Øistein Jelmert Skjolddal
+% Loosely based on the moderncv template
+
+% This File compiles to the CV
+%%%%%%%%%%%%%%%%%%%% Packages and Imports %%%%%%%%%%%%%%%%%%%%
+%\documentclass[11pt, a4paper, roman]{article}  
+\documentclass[11pt, a4paper]{article}  
+\usepackage{multicol} % Multiple text columns
+\usepackage{array} % Arrays and Tables (tabular environment)
+
+%\usepackage{amssymb} % Special symbols for use in lists or math($)
+%\usepackage{textcomp} % Special symbols for use in lists or math($)
+
+%%%%%%%%%%%%%%%%%%%%%%%%% Setup %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%-------------- Paper Geometry: margins etc --------------------
+\input{Formating/Formating.tex}
+
+%-------------- CV entry style section --------------------
+\input{Formating/Styles.tex}
+
+%%%%%%%%%%%%%%%%%%%%%% Short or long version %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newif\ifextended % Define the if statement
+% Compact version is standard
+
+%%%%%%%%%%%%%%%%%%%%%% Extend the document %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\extendedtrue % Show extended version
+%%%%%%%%%%%%%%%%%%%%%% Extend the document %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%% Begin document %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%-------------- Main body --------------------
+\begin{document}
+
+%-------------- Title & "Contact" Info --------------------
+\input{CV_Sections/Title.tex}
+
+%-------------- Education  --------------------
+\input{CV_Sections/Education.tex}
+
+%-------------- Projects  --------------------    
+\input{CV_Sections/Projects.tex}
+
+%-------------- Courses  --------------------
+\ifextended
+    \input{CV_Sections/Courses.tex}
+    \clearpage % Formating ellement
+  \fi
+
+%-------------- Skills  --------------------
+\input{CV_Sections/Skills.tex}
+
+%-------------- Work  --------------------
+\ifextended
+    \input{CV_Sections/Work.tex}
+  \fi
+  
+%-------------- Papers  --------------------
+\ifextended
+    \input{CV_Sections/Papers.tex}
+  \fi
+    
+\end{document}

@@ -1,0 +1,83 @@
+%%%%%%%%%%%%%%%%%%%%%%%%% Notes %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Author: Øistein Jelmert Skjolddal
+% Loosely based on the moderncv template
+
+% This section contains specific element styles.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%\ifx \Macro1 \Macro2 %<tex commands>
+%\else %<tex commands>
+%\fi
+
+
+%-------------- CV entry style section --------------------
+
+\newcommand*{\cvEntry}[6][.25em]{ % 6 elements on the form: 
+        %{\cvEntry{2dn bracket}{3rd bracket}{4th bracket}{5th bracket}{6th bracket}}
+    \begin{tabular}{l} % First element on the first line, contained in the 2nd {} 
+        {\bfseries #2} % Bold the content of the 2nd {}
+    \end{tabular}
+    \hfill % Move the following element to the right
+    \begin{tabular}{l} % Second element on the first line, , contained in the 3rd {}
+        {\bfseries #3} % Bold the content of the 3rd {}
+    \end{tabular} \\ % Newline
+    \begin{tabular}{l} % First element on the new line 3rd element, contained in the 4th {}
+        {\itshape #4} % Write the content of the 4th {} in italic
+    \end{tabular}
+    \hfill % Move the following element to the right
+    \begin{tabular}{l} % Second element on the new line. 4th element, contained in the 5th {}
+        {\itshape #5} % Write the content of the 5th {} in italic
+    \end{tabular}
+
+    % https://en.wikibooks.org/wiki/TeX/ifx
+    \ifx&#6& % If nothing in the 7th bracket, the nothing 
+    \else{
+    % http://www.sascha-frank.com/latex-minipage.html
+        %\begin{minipage}{\maincolumnwidth}
+        \begin{minipage}{170mm}
+            \small#6 % With the content of element 7
+        \end{minipage}}
+    \fi % end mini, end if (\fi)
+    \par \addvspace{#1}} % New paragraph, put each new element with in the space of the cvEntry (bracket 1)
+
+%-------------- Programming Languages --------------------    
+\newcommand*{\cvLanguage}[4][.25em]{ % 3 elements on the form: 
+        %{\cvLanguage{2dn bracket}{3rd bracket}{4th bracket}}
+    \begin{tabular}{p{6cm}} % First element on the first line, contained in the 2nd {} 
+        {\bfseries #2} % Bold the content of the 2nd {}
+    \end{tabular}
+    \begin{tabular}{l} % First element on the first line, contained in the 2nd {} 
+    {\bfseries #3} % Bold the content of the 3rd {}
+    \end{tabular}
+    \hfill % Move the following element to the right
+    \begin{tabular}{l} % Second element on the first line, , contained in the 3rd {}
+        {\bfseries #4} % Bold the content of the 4th {}
+    \end{tabular} %\\ % Newline
+    \par \addvspace{#1}} % New paragraph, put each new element with in the space of the cvEntry (bracket 1)
+
+%-------------- Programming Languages headlines --------------------    
+\newcommand*{\LanguageHeader}[4][.25em]{ % 3 elements on the form: 
+     %{\cvLanguage{2dn bracket}{3rd bracket}{4th bracket}}
+    \begin{tabular}{l} % First element on the first line, contained in the 2nd {} 
+        {\bfseries #2} % Bold the content of the 2nd {}
+    \end{tabular}
+    \hfill % Move the following element to the right
+    \begin{tabular}{l} % First element on the first line, contained in the 2nd {} 
+        {\bfseries #4} % Bold the content of the 3rd {}
+    \end{tabular}
+    \par \addvspace{#1}} % New paragraph, put each new element with in the space of the cvEntry (bracket 1)
+
+%-------------- Programming Languages 2 --------------------    
+\newcommand*{\Language}[4][.25em]{ % 3 elements on the form: 
+     %{\cvLanguage{2dn bracket}{3rd bracket}{4th bracket}}
+    \begin{tabular}{l} % First element on the first line, contained in the 2nd {} 
+        {#2} % The content of the 2nd {}
+    \end{tabular}
+    \hfill % Move the following element to the right
+    \begin{tabular}{l} % First element on the first line, contained in the 2nd {} 
+        {#4} % The content of the 3rd {}
+    \end{tabular}
+    \par \addvspace{#1}} % New paragraph, put each new element with in the space of the cvEntry (bracket 1)
+    
+ 

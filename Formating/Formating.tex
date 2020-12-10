@@ -1,0 +1,57 @@
+%%%%%%%%%%%%%%%%%%%%%%%%% Notes %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Author: Øistein Jelmert Skjolddal
+% Loosely based on the moderncv template
+
+% This section contains the general formatting rules for the document.
+% document geometry, header, footer, margins, fonts, sizes, colors etc.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%% Packages and Imports %%%%%%%%%%%%%%%%%%%%
+\usepackage[utf8]{inputenc}
+\usepackage{fontawesome} % Provides icons for E-mail, Phone and GitHub
+%\usepackage[xcdraw]{xcolor} % Colors stuff 
+\usepackage[dvipsnames]{xcolor} % Also Colors stuff
+\usepackage{geometry} % Change Margins, Headers etc
+\usepackage{titlesec} % Customised Title Sections
+
+%-------------- Paper Geometry: margins etc --------------------
+% https://www.overleaf.com/learn/latex/Page_size_and_margins
+\geometry{
+ a4paper,   % Paper type
+ left=15mm, % Left margin and Left text boundary combined
+ top=12mm, % Header boundary and Top text boundary combined
+ bottom=2mm, % Header boundary and Top text boundary combined
+ }
+
+\setlength{\parindent}{0ex} % Remove new paragraph indentation
+
+%-------------- Main Title Formatting --------------------
+%TODO
+% Use: https://en.wikibooks.org/wiki/LaTeX/Title_Creation
+
+%-------------- Chapter Title Formatting --------------------
+\pagenumbering{gobble} % No section numbering
+
+%\noindent\rule[3ex]{\linewidth}{1pt} % Graphical element, Separation line
+\titleformat
+{\section} % command
+[display] % shape
+%{\bfseries\Large\itshape} % italic format
+{\bfseries\Large} % regular format, large font
+{\thechapter} % label
+{0.5ex} % size
+{
+\textcolor{RoyalBlue} % Element colour
+} % before-code
+% code
+[
+\vspace{-0.5ex} % Remove spacing
+\rule{\textwidth}{1pt}
+\vspace{-3ex} % Remove spacing
+] % after-code
+
+%-------------- List Formatting --------------------
+% https://www.rpi.edu/dept/arc/training/latex/LaTeX_symbols.pdf
+\renewcommand{\labelitemi}{$\textcolor{RoyalBlue}\circ$} % First level
+%\renewcommand{\labelitemi}{$\textcolor{RoyalBlue}\textopenbullet$} % First level , requires the \usepackage{textcomp} package
+%\renewcommand\labelitemii{$\square$} % Second Level
